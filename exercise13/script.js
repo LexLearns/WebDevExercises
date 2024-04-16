@@ -1,4 +1,3 @@
-let addCard = confirm("Do you want to add a card");
 
 // function addCard(){
 // 	let card = document.createElement("div");
@@ -9,19 +8,23 @@ let addCard = confirm("Do you want to add a card");
 
 let viewCountConvertor = views => {
 	if(views > Math.pow(10, 12)){
-		let newCount = Math.round(views/Math.pow(10, 12));
+		let newCount = views/Math.pow(10, 12);
+		newCount = Math.trunc(newCount);
 		return `${newCount}T`
 	}
 	else if(views > Math.pow(10, 9)){
-		let newCount = Math.round(views/Math.pow(10, 9));
+		let newCount = views/Math.pow(10, 9);
+		newCount = Math.trunc(newCount);
 		return `${newCount}B`
 	}
 	else if(views > Math.pow(10, 6)){
-		let newCount = Math.round(views/Math.pow(10, 6));
+		let newCount = views/Math.pow(10, 6);
+		newCount = Math.trunc(newCount);
 		return `${newCount}M`
 	}
-	else if(views > Math.pow(10, 2)){
-		let newCount = Math.round(views/Math.pow(10, 3));
+	else if(views > Math.pow(10, 3)){
+		let newCount = views/Math.pow(10, 3);
+		newCount = Math.trunc(newCount);
 		return `${newCount}K`
 	}
 	else{
@@ -84,8 +87,6 @@ function createCard(title, cName, views, monthsOld, duration, thumbnail){
 	document.querySelector(".container").append(card);
 }
 
-if(addCard){
 	for(let i = 0; i < 10; i++){
-		createCard("Hello this is the title", "CodeAndEat", 2550501, 345, "13:4", "./asset/cat.jpg");
-	}
+		createCard("Hello this is the title", "CodeAndEat", 2555555, 345, "13:40", "./asset/cat.jpg");
 }
